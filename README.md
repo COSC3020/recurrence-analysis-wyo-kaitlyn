@@ -31,3 +31,38 @@ function mystery(n) {
 Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
+
+$T(n) = 1 if n \leq 1$
+
+$T(n) = 3T(n/3) + n^5 if n > 1$
+
+Next, substitute iterations to find a pattern.
+
+$T(n) = 3T(n/3) + n^5$
+
+= $3(3T(n/3/3) + (n/3)^5) + n^5 $
+
+= $9T(n/9) + 3n^5/3^5) + n^5 $
+
+.
+
+.
+
+.
+
+= $3^iT(n/3^i) + \sum\limits_{j=0}^{i} 3^j/{3^j}^5 + n^5$
+
+let $i = log_3n$ for the base case
+
+= $3^{log_3n}T(n/3^{log_3n}) + \sum\limits_{j=0}^{log_3n-1} 3^j/{3^j}^5 + n^5$
+
+$3^{log_3n}$ and $3^j/{3^j}^5$ are constants, so it can be reduced to
+
+= $nT(1) + n^5\sum\limits_{j=0}^{log_3n-1} 3^j/{3^j}^5$
+
+and then 
+
+= $\in \Theta(n^5log_3n)$
+
+
+
